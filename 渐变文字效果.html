@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* latin-ext */
+      @font-face {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 300;
+        src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwaPGR_p.woff2)
+          format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 300;
+        src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwiPGQ.woff2)
+          format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #222;
+      }
+
+      .rainbow {
+        letter-spacing: 0.2rem; /* 字符间距 */
+        font-size: 1.2rem;
+        font-family: Lato, serif;
+        text-transform: uppercase; /* 定义无小写字母，仅有大写字母 */
+      }
+
+      .rainbow span {
+        animation: rainbow 50s alternate infinite forwards;
+      }
+      .rainbow2 {
+        font-size: 16px;
+      }
+      .rainbow2 span {
+        animation: rainbow 50s alternate infinite forwards;
+      }
+
+      @keyframes rainbow {
+        0% {
+          color: #8f96ef;
+        }
+        5% {
+          color: #9f8fef;
+        }
+        10% {
+          color: #d18fef;
+        }
+        15% {
+          color: #abef8f;
+        }
+        20% {
+          color: #8fbaef;
+        }
+        25% {
+          color: #ef8fce;
+        }
+        30% {
+          color: #ef8fa6;
+        }
+        35% {
+          color: #8fefed;
+        }
+        40% {
+          color: #ef8fbf;
+        }
+        45% {
+          color: #d18fef;
+        }
+        50% {
+          color: #8fefe4;
+        }
+        55% {
+          color: #deef8f;
+        }
+        60% {
+          color: #efd48f;
+        }
+        65% {
+          color: #8fefd9;
+        }
+        70% {
+          color: #e48fef;
+        }
+        75% {
+          color: #a9ef8f;
+        }
+        80% {
+          color: #efb38f;
+        }
+        85% {
+          color: #99ef8f;
+        }
+        90% {
+          color: #b9ef8f;
+        }
+        95% {
+          color: #8fafef;
+        }
+        100% {
+          color: #e4ef8f;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rainbow">ano hi mada shiranai no fushigi no monogatari</div>
+    <div class="rainbow2">芒果电影票</div>
+  </body>
+</html>
+<script>
+  let rainbowText = document.querySelector(".rainbow");
+  let letters = rainbowText.textContent.split("");
+  rainbowText.textContent = "";
+  letters.forEach((letter, i) => {
+    let span = document.createElement("span");
+    span.textContent = letter;
+    span.style.animationDelay = `${-20 + i * 0.2}s`;
+    rainbowText.append(span);
+  });
+</script>
+<script>
+  let rainbowText2 = document.querySelector(".rainbow2");
+  let letters2 = rainbowText2.textContent.split("");
+  rainbowText2.textContent = "";
+  letters2.forEach((letter, i) => {
+    let span = document.createElement("span");
+    span.textContent = letter;
+    span.style.animationDelay = `${-20 + i * 0.2}s`;
+    rainbowText2.append(span);
+  });
+</script>
